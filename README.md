@@ -71,6 +71,10 @@
 
 * Step 4: write a *docker-compose.yml* to glue all containers together
 
+* Step 5: Write a *.env.txt* file to pass environment variables, if environment is defined as variable in *docker-compose.yml*
+
+* Step 6: Write a *.env* file to assign argument value, if version_name, path are defined as parameter in *docker-compose.yml*
+
 * Reference (a Sample): https://takacsmark.com/docker-compose-tutorial-beginners-by-example-basics/#what-is-docker-compose
 
 
