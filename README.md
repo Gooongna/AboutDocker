@@ -16,7 +16,7 @@
 
 * **Docker Swarm**: another Docker product, is used to manage multi-container application stacks across multiple. **Docker Compose and Docker Swarm can both use the same Compose file to deploy and run application stacks. So most of entries in the Compose File is compatible with Docker Swarm
 
-# Common Cammand Line
+# Common Docker Cammand Line
 
 * Pull image `docker pull redis`
 
@@ -42,6 +42,21 @@
   
 * Run images in foreground which allows to interact with container e.g. to access a bash shell (e.g. normally, operating system image need this function)
 `docker run -it ubuntu bash` .This allows you to get access to a bash shell inside of  a container
+
+# Common Docker Compose Command Line
+
+* Run Docker Compose in a single command `docker-compose up`
+
+* Stop the stack `docker-compose down`
+
+* List contains in your application `docker-compose ps`
+
+* Access the logs of all containers `docker-compose logs`
+
+* Check the processes in all containers `docker-compose top`
+
+* Push the image to registry: `docker-compose push`
+
 
 # Procedures
 * Goal: Create a dummy webserver with Flask framework and Redis database. Deploy it via Docker
