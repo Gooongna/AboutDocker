@@ -43,3 +43,20 @@
 * Run images in foreground which allows to interact with container e.g. to access a bash shell (e.g. normally, operating system image need this function)
 `docker run -it ubuntu bash` .This allows you to get access to a bash shell inside of  a container
 
+# Procedures
+* Goal: Create a dummy webserver with Flask framework and Redis database. Deploy it via Docker
+
+* Idea: Create two separate images for Flask app and Redis. Flask app is built by own and Redis is directly pulled from Docker Hub.
+
+* Step 1: write *requirement.txt* (why?)
+
+* Step 2: write *app.py* to realize web server
+
+* Step 3: write *DockerFile.txt* to build own Flask image
+
+* Step 4: write *docker-compose.yml* to glue all containers together
+
+* Reference (a Sample): https://takacsmark.com/docker-compose-tutorial-beginners-by-example-basics/#what-is-docker-compose
+
+
+
