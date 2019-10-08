@@ -20,7 +20,7 @@ services:
   # 2nd Service
   # It's shorter bcs it directly pull from Docker Hub
   redis:
-    image: redis:4.0.11-alpine # by this, Docker Compose will pull this image from Hub
+    image: ${REDIS_VERSION} # version passed from .env file. By this, Docker Compose will pull this image from Hub
     networks:  # optional
       - mynet
     volumes:  # optional, store data of this container outside of the container
