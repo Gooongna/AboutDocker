@@ -1,13 +1,17 @@
 version: '3'
 
 services:
-  app:
-    build: .
-    image: takacsmark/flask-redis:1.0
-    environment:
+  # 1st Service
+  app: 
+    build: . # This means that this service uses a custom image that is built using the Dockerfile in the current directory (hence .).
+    image: takacsmark/flask-redis:1.0  # specify name:tag of the image
+    environment: # ?
       - FLASK_ENV=development
-    ports:
-      - 5000:5000
-
+    ports: 
+      - 5000:5000 # map port 5000 from the container to port 5000 on the host machine
+  
+  # 2nd Service
+  # It's shorter bcs it directly pull from Docker Hub
   redis:
-    image: redis:4.0.11-alpine
+    image: redis:4.0.11-alpine # by this, Docker Compose will pull this image from Hub
+    
