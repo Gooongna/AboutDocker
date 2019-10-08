@@ -63,17 +63,17 @@
 
 * Idea: Create two separate images for Flask app and Redis. Flask app is built by own and Redis is directly pulled from Docker Hub.
 
-* Step 1: write a *requirement.txt* (why?)
+* Step 1: write a **requirement.txt** (why?)
 
-* Step 2: write a *app.py* to realize web server
+* Step 2: write a **app.py** to realize web server
 
-* Step 3: write a *DockerFile.txt* to build own Flask image
+* Step 3: write a **DockerFile.txt** to build own Flask image
 
-* Step 4: write a *docker-compose.yml* to glue all containers together
+* Step 4: write a **docker-compose.yml** to glue all containers together
 
-* Step 5: Write a *.env.txt* file to pass environment variables, if environment is defined as variable in *docker-compose.yml*
+* Step 5: Write a **.env.txt** file to pass environment variables, if environment is defined as variable in **docker-compose.yml**
 
-* Step 6: Write a *.env* file to assign argument value, if version_name, path are defined as parameter in *docker-compose.yml*
+* Step 6: Write a **.env** file to assign argument value, if version_name, path are defined as parameter in **docker-compose.yml**
 
 * Reference (a Sample): https://takacsmark.com/docker-compose-tutorial-beginners-by-example-basics/#what-is-docker-compose
 
