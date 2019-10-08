@@ -3,15 +3,31 @@ version: '3'
 services:
   # 1st Service
   app: 
-    build: . # This means that this service uses a custom image that is built using the Dockerfile in the current directory (hence .).
-    image: takacsmark/flask-redis:1.0  # specify name:tag of the image
-    environment: # ?
+    build: 
+      context: .  # This means that this service uses a custom image that is built using the Dockerfile in the current directory (hence .).
+      args:       # We pass the value PYTHON_VERSION (which is 3.7.0-alpine3 assinged in .env file) to IMAGE_VERSION parameter in Dockerfile
+        - IMAGE_VERSION=${PYTHON_VERSION} 
+    image:  ${DOCKER_USER}/flask-redis:1.0  # specify name:tag of the image, and define the docker user as a parameter
+    environment:  #  This can be replaced by 'env_file: .env.txt'
       - FLASK_ENV=development
     ports: 
-      - 5000:5000 # map port 5000 from the container to port 5000 on the host machine
+      - 80:5000   # map port 80 from the container to port 5000 on the host machine
+    networks:   # optional
+      - mynet
+    # Mechanism behind Docker Compose: it will automatically create a custom network for these two containers which is isolated with all other network on the host. 
+    # Winthin the same network, container simply connect with each by their service name in compose file
   
   # 2nd Service
   # It's shorter bcs it directly pull from Docker Hub
   redis:
     image: redis:4.0.11-alpine # by this, Docker Compose will pull this image from Hub
+    networks:  # optional
+      - mynet
+    volumes:  # optional, store data of this container outside of the container
+      - mydata:/data 
+ 
+ networks:  # optional
+   mynet:
+ volumes:   # optional
+   mydata:
     
