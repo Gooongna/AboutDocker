@@ -4,6 +4,8 @@
 
 * **Base image**: an image you use for your own images. You can reuse any image to build your own upon. It's based on  a _DockerFile.txt_** file. 
 
+* **Dangling images**: assume you create a dockerfile and build an image with it. and you modified one line and run the same 'docker build' cmd again to create a new images but with the same image_name with previous one. Now, for the previous image which now still exits and is called 'dangling images'. 
+
 * **Container**: if you run a Docker image a container is created. Imagine a container as a copy of the image that you use and manipulate.
 
 * **Volume**: this is a path on the host where your container can persist data. For example you can delete your container without losing the data in the volume, create a new container and make it use the existing volume.
@@ -14,13 +16,23 @@
 
 * **Docker Compose**:  a toolkit to build, ship and run multi-container applications. It's based on  a _docker-compose.yml_** file.  it can manage multi-container applications on a single machine. It does not work on computer clusters, across multiple machine.
 
-* **Docker Swarm**: another Docker product, is used to manage multi-container application stacks across multiple. **Docker Compose and Docker Swarm can both use the same Compose file to deploy and run application stacks. So most of entries in the Compose File is compatible with Docker Swarm
+* **Docker Swarm**: another Docker product, is used to manage multi-container application stacks across multiple. Docker Compose and Docker Swarm can both use the same Compose file to deploy and run application stacks. So most of entries in the Compose File is compatible with Docker Swarm
+
+* **One container should have one concern**:Think of containers as entities that take responsibility for one aspect of your project. So design your application in a way that your web server, database, in-memory cache and other components have their own dedicated containers.
+
+
 
 # Common Docker Cammand Line
 
 * Pull image `docker pull redis`
 
 * List pulled images `docker images`
+
+* List all images including the intermediary images created during `docker build`, `docker images -a`
+
+* List images with filter `docker images --filter "dangling=true"`
+
+* Remove dangling images `docker rmi $(docker images -q --filter "dangling=true").`
 
 * Run an image = create a container `docker run -[operation] [image_name:tag]`, `docker run -b redis:3.2`
 
@@ -74,6 +86,9 @@
 * **Step 5**: Write a `.env.txt` file to pass environment variables, if environment is defined as variable in *docker-compose.yml*
 
 * **Step 6**: Write a `.env` file to assign argument value, if version_name, path are defined as parameter in *docker-compose.yml*
+
+
+* **Step 7**: Run ` docker build -t [image_name]:[image_tag] .` to build your custom image. `.` at the line end specifies that the directory where docker build should be looking for a Dockerfile. Therefore `.` tells docker build to look for the file in the current directory.
 
 * **Reference** (a Sample): https://takacsmark.com/docker-compose-tutorial-beginners-by-example-basics/#what-is-docker-compose
 
