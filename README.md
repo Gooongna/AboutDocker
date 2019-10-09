@@ -63,7 +63,7 @@
 
 * **Idea**: Create two separate images for Flask app and Redis. Flask app is built by own and Redis is directly pulled from Docker Hub.
 
-* **Step 1**: write a `requirement.txt`(why?)
+* **Step 1**: write a `requirement.txt`(to tell what need to be 'pip install')
 
 * **Step 2**: write a `app.py` to realize web server
 
