@@ -79,7 +79,7 @@
 
 * **Step 2**: write a `app.py` to realize web server
 
-* **Step 3**: write a `DockerFile.txt` to build own Flask image
+* **Step 3**: write a `DockerFile.txt` to build own Flask image. what to do if two images??change file name?
 
 * **Step 4**: write a `docker-compose.yml` to glue all containers together
 
