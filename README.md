@@ -38,6 +38,16 @@
 
 * List all runnging container `docker ps -a`
 
+* Remove container `docker container rm [container_name]` or by force `docker container rm -f [container_name]`
+
+* Remove image `docker image rm [image_name]`
+
+* Show execution log of a container `docker logs [container_name]`
+
+* Go back to the execution log of a container `docker logs -f [container_name]`
+
+* Get into the shell of the container to check files `docker exec -it [container_name] sh`, `sh` or `bash`
+
 * Run an image with a user-defined container name `docker run -b --name redisHostPost redis:latest`
 
 * Now container Redis is running, but is surprised that we cannot access it. The reason is that each container is sandboxed. If a service needs to be accessible by a process not running in a container, then the port needs to be exposed via the Host.
