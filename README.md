@@ -46,7 +46,7 @@
 
 * Go back to the execution log of a container `docker logs -f [container_name]`
 
-* Get into the shell of the container to check files `docker exec -it [container_name] sh`, `sh` or `bash`
+* Get into the shell of the container to check files `docker exec -it [container_name] sh`, `sh` or `bash` and `ctrl+d` to exit
 
 * Run an image with a user-defined container name `docker run -b --name redisHostPost redis:latest`
 
