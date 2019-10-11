@@ -67,9 +67,11 @@
 
 # Common Docker Compose Command Line
 
-* Run Docker Compose in a single command `docker-compose up`
+* Build image + run containers automatically by a single cmd `docker-compose up`, when you run it again, it will not update images
 
-* Stop the stack `docker-compose down`
+* Kill all the running containers in this docker compose `docker-compose down`, images will stay
+
+* Build/Update image + run containers `docker-compose build`
 
 * List contains in your application `docker-compose ps`
 
