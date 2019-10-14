@@ -69,7 +69,7 @@
 
 * Build image + run containers automatically by a single cmd `docker-compose up`, when you run it again, it will not update images
 
-* Kill all the running containers in this docker compose `docker-compose down`, images will stay
+* `docker-compose down` will remove containers and network, but images will keep
 
 * Build/Update image `docker-compose build`
 
