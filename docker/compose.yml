@@ -6,6 +6,8 @@ services:
       context: .
       args:
         - IMAGE_VERSION=${PYTHON_VERSION}
+    volume:
+      - host dir of sourcecode: dir in docker    
     image: ${DOCKER_USER}/flask-redis:1.0
     env_file: .env.txt
     ports:
