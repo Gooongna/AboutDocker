@@ -34,6 +34,8 @@
 
 * Remove dangling images `docker rmi $(docker images -q --filter "dangling=true").`
 
+* Build a image ` docker build -t [image_name]:[image_tag] .`
+
 * Run an image = create a container `docker run -[operation] [image_name:tag]`, `docker run -b redis:3.2`
 
 * List all runnging container `docker ps -a`
