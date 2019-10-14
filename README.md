@@ -64,7 +64,7 @@
 	Any data which needs to be saved on the Docker Host, and not inside containers, should be stored in /opt/docker/data/redis
   `docker run -d --name redisMapped -v /opt/docker/data/redis:/data redis`
   
-* Connect source code form host machine to container `docker run --mount type=bind,source=$(pwd),target=/usr/src/app -p 5000:5000 test_mount:gn` (in this way, you don't need COPY sourcecode in Dockerfile)
+* Connect source code form host machine to container `docker run --mount type=bind,source=$(pwd),target=/usr/src/app -p 5000:5000 test_mount:gn` In this way, you don't need COPY sourcecode in Dockerfile. `pwd` returns the current directory
   
 
 # Common Docker Compose Command Line
