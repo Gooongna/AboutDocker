@@ -16,11 +16,14 @@ ENV no_proxy *.bosch.com
 RUN pip install --no-cache-dir -r requirement.txt
 #RUN pip3 install --no-cache-dir flask
 
-COPY . .
+# how to copy source code into docker
+# option 1:
+# COPY . .
 # COPY in the rest of your app’s source code from your host to your image filesystem.
-# or do:
+# option 2:
 # COPY app.py /usr/src/app/
 # COPY templates/index.html /usr/src/app/templates/
+# option 3: instead of use COPY in dockerfile, use --mount in 'docker run' or volume in docker-compose file
 
 #TODO: why?
 EXPOSE 5000
