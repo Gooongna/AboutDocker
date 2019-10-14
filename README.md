@@ -64,8 +64,8 @@
 	Any data which needs to be saved on the Docker Host, and not inside containers, should be stored in /opt/docker/data/redis
   `docker run -d --name redisMapped -v /opt/docker/data/redis:/data redis`
   
-* Run images in foreground which allows to interact with container e.g. to access a bash shell (e.g. normally, operating system image need this function)
-`docker run -it ubuntu bash` .This allows you to get access to a bash shell inside of  a container
+* Connect source code form host machine to container `docker run --mount type=bind,source=$(pwd),target=/usr/src/app -p 5000:5000 test_mount:gn` (in this way, you don't need COPY sourcecode in Dockerfile)
+  
 
 # Common Docker Compose Command Line
 
