@@ -71,7 +71,9 @@
 
 * Kill all the running containers in this docker compose `docker-compose down`, images will stay
 
-* Build/Update image + run containers `docker-compose build`
+* Build/Update image `docker-compose build`
+
+* Run images `docker-compose up`
 
 * List contains in your application `docker-compose ps`
 
