@@ -65,6 +65,10 @@
   `docker run -d --name redisMapped -v /opt/docker/data/redis:/data redis`
   
 * Connect source code form host machine to container `docker run --mount type=bind,source=$(pwd),target=/usr/src/app -p 5000:5000 test_mount:gn` In this way, you don't need COPY sourcecode in Dockerfile. `pwd` returns the current directory
+
+* List volume `docker volume ls` 
+
+* Remove volume/Clean volume content `docker volume rm volume_name`
   
 
 # Common Docker Compose Command Line
