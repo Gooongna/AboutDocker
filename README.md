@@ -114,15 +114,17 @@
 
 # Issues
 **1. How to let one container comminucate to another container?**
+
 **Method 1:** docker-compose
-*step 1: define a network
+* step 1: define a network
 * step 2: connect to other container by simply host=service_name
+
 **Method 2:** user-defined bridge network
-*step 1: create a network `docker network create central-logging-net`, `docker network ls`
-*step 2: run container in your netowrk `docker run --name flask_g --network central-logging-net -p 25052:25052 flask_gunicorn:latest`
-*step 3: connect a running container with ur network `ocker network connect central-logging-net mongodb`
-*step 4: check assigned gateway(IPv4Address) of each container `docker inspect central-logging-net`
-*step 5: change host=assigned gateway
+* step 1: create a network `docker network create central-logging-net`, `docker network ls`
+* step 2: run container in your netowrk `docker run --name flask_g --network central-logging-net -p 25052:25052 flask_gunicorn:latest`
+* step 3: connect a running container with ur network `ocker network connect central-logging-net mongodb`
+* step 4: check assigned gateway(IPv4Address) of each container `docker inspect central-logging-net`
+* step 5: change host=assigned gateway
 
 
 
